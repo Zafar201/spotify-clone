@@ -2,7 +2,8 @@ export const initialState ={
     user:null,
     playelists:[],
     playing:false,
-    item:null
+    item:null,
+    token:"BQBOONJgJjPlnw6zueP12T8xLKxbZ8lI0uRLVChCDSlTxyVfGodJf5W0vQoP6gKl5PbKPy5zZ4l4ebLDx1N_vb6TCPFcLih4opoFzzYOEfF25NlTVUzMFMcJVxXFadecHesTCcVMuAEt7xG5AL0Kcr9qqUSSWUtyDq88adZmxgtHQu9biuOO",
 }
 
 const reducer =(state,action) => {
@@ -14,6 +15,12 @@ console.log(action)
               ...state,
               user:action.user
           }
+
+          case 'SET_TOKEN':
+            return{
+                ...state,
+                token:action.token
+            }
           default:
               return state
   }
