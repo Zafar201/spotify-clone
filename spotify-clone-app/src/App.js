@@ -38,8 +38,16 @@ function App() {
         playlists:playlists,
       })
     })
-    }
-  },[])
+
+    spotify.getPlaylist('6Yacz3CRsVlkKbKMOoGUtP').then((response) =>
+     dispatch({
+      type:"SET_DISCOVER_WEEKLY",
+      discover_weekly:response,
+    })
+    );
+  }
+},[])
+  
 
   return (
     <div className="app">{token ?
